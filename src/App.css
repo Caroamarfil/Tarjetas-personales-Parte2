@@ -1,0 +1,138 @@
+/* Estilo para centrar el contenedor principal */
+.App {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content:center;
+  max-width: 100%;
+  min-height:100%;
+  margin: 0 auto;
+  padding: 20px;
+  
+}
+/* Estilos globales del body */
+body {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('/background.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+/* Título centrado */
+.title-container {
+  text-align: center;
+  color: #ffffff;
+  font-size: 2.5em;
+  font-weight: bold;
+  margin-bottom: 1em;
+  font-family: "Libre Baskerville", serif;
+}
+
+/* Contenedor principal de los botones */
+.button-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5em;
+  background-color:#e5e2e2ff;
+  padding:2em;
+  border-radius:0.7em;
+}
+.button-container.buttons-inline {
+  padding: 1em;
+  margin-top: 1em !important;
+}
+/* Estilos para botones en landing */
+.button-container .buttons-wrapper {
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  justify-content: center;
+  gap: 1.2em;
+}
+/* Cuando showButtons es true, los botones estarán en línea */
+.buttons-inline .buttons-wrapper {
+  display: flex;
+  justify-content: center;
+  gap: 1.2em;
+}
+
+/* Estilos para los botones de la landing */
+.button-container .btn {
+  padding: 12px 24px;
+  border-radius: 20px;
+  font-weight: bold;
+  font-size: 1.1em;
+  transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+  border: 2px solid #8f94fb;
+  color: #8f94fb;
+  background-color: transparent;
+}
+
+/* Estilo al pasar el mouse por encima */
+.btn:hover {
+  background-color: #8f94fb;
+  color: #ffffff;
+  transform: scale(1.08); /* Efecto de agrandado */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Sombra al hacer hover */
+}
+
+
+.uniform-card {
+  width: 100%;
+  max-width:26rem;
+  min-height: 28rem;
+  display: flex;
+  flex-direction: column;
+  margin:0 auto;
+  
+}
+
+.amiko-regular {
+  font-family: "Amiko", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.arvo-regular {
+  font-family: "Arvo", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.bad-script-regular {
+  font-family: "Bad Script", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+.inter-regular {
+  font-family: "Inter", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.style-script-regular {
+font-family: "Style Script", cursive;
+font-weight: 400;
+font-style: normal;
+}
+.libre-baskerville-regular {
+  font-family: "Libre Baskerville", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.libre-baskerville-bold {
+  font-family: "Libre Baskerville", serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.libre-baskerville-regular-italic {
+  font-family: "Libre Baskerville", serif;
+  font-weight: 400;
+  font-style: italic;
+}
