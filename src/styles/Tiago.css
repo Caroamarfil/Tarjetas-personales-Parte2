@@ -1,0 +1,125 @@
+/* CustomStyles.css */
+@import url('https://fonts.googleapis.com/css?family=Source+Code+Pro:200');
+
+.tiago-background {
+  background-image: url('https://static.pexels.com/photos/414171/pexels-photo-414171.jpeg');
+  background-size: cover;
+  -webkit-animation: slidein 100s;
+  animation: slidein 100s;
+
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+
+  -webkit-animation-direction: alternate;
+  animation-direction: alternate;
+}
+
+.tiago-name {
+  text-align: center;
+  color: #07072a;
+  font-size: 1.5em;
+  font-weight: bold;
+  font-family: 'Source Code Pro', monospace;
+  text-transform: uppercase;
+}
+
+.tiago-description {
+  text-align: center;
+  color: #0c0f08;
+  font-size: 1.08em;
+  font-weight: bold;
+  font-style: italic;
+}
+
+.tiago-button {
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.tiago-button span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  border: 1px solid #fff;
+  border-radius: 5px;
+  transition: all 0.3s;
+}
+
+.tiago-button:hover {
+  transform: rotate(-10deg) skew(10deg);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.tiago-button:hover span:nth-child(1) {
+  opacity: 0.2;
+  transform: translate(5px, -5px);
+}
+
+.tiago-button:hover span:nth-child(2) {
+  opacity: 0.4;
+  transform: translate(10px, -10px);
+}
+
+.tiago-button:hover span:nth-child(3) {
+  opacity: 0.6;
+  transform: translate(15px, -15px);
+}
+
+.tiago-button:hover span:nth-child(4) {
+  opacity: 0.8;
+  transform: translate(20px, -20px);
+}
+
+@-webkit-keyframes slidein {
+  from {
+    background-position: top;
+    background-size: 3000px;
+  }
+  to {
+    background-position: -100px 0px;
+    background-size: 2750px;
+  }
+}
+
+@keyframes slidein {
+  from {
+    background-position: top;
+    background-size: 3000px;
+  }
+  to {
+    background-position: -100px 0px;
+    background-size: 2750px;
+  }
+}
+
+/* Contenedor del carrusel */
+.technologies-slider {
+  display: flex;
+  overflow: hidden;
+  position: relative;
+  height: 48px;
+}
+
+/* Animación infinita */
+.slider-content {
+  display: flex;
+  gap: 20px;
+}
+
+/* Iconos individuales */
+.tech-icon {
+  width: 48px;
+  height: 48px;
+}
+
+/* Duplicación de contenido para loop infinito */
+.slider-content::after {
+  content: '';
+  display: flex;
+}
