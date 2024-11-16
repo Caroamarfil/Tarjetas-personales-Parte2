@@ -1,6 +1,5 @@
 import { useContext } from 'react';
 import { useParams } from 'react-router-dom';
-import { cardsData } from '../data/Data';
 import { CardContext } from '../context/CardContext';
 
 const MainCard = ({ cardData }) => {
@@ -11,12 +10,14 @@ const MainCard = ({ cardData }) => {
     cardsData.find((card) => card.name === decodeURIComponent(cardNameFromUrl));
 
   if (!card) {
-    return <div>Tarjeta no encontrada</div>;
+    return <div className='text-center mt-4 fs-4'>Tarjeta no encontrada</div>;
   }
 
   return (
     <div
-      className={`card text-center shadow-sm rounded-4 uniform-card ${card.cardClass}`}
+      className={`card text-center shadow-sm rounded-4 uniform-card ${
+        card.cardClass
+      } ${card.name === 'Tiago Ibarrola' ? 'tiago-background' : ''}`}
     >
       {/* Condicional para verificar si tiene header */}
       {card.header ? (
@@ -49,7 +50,11 @@ const MainCard = ({ cardData }) => {
       )}
 
       <div className='card-body'>
-        <h5 className={`card-title fw-bold mb-3 ${card.nameClass || ''}`}>
+        <h5
+          className={`card-title fw-bold mb-3 ${card.nameClass || ''} ${
+            card.name === 'Tiago Ibarrola' ? 'tiago-name' : ''
+          }`}
+        >
           {card.name}
         </h5>
 
@@ -68,7 +73,11 @@ const MainCard = ({ cardData }) => {
           </div>
         )}
 
-        <p className='card-text text-muted fst-italic px-4 mb-4'>
+        <p
+          className={`card-text text-muted fst-italic px-4 mb-4 ${
+            card.name === 'Tiago Ibarrola' ? 'tiago-description' : ''
+          }`}
+        >
           {card.description}
         </p>
 
@@ -76,8 +85,14 @@ const MainCard = ({ cardData }) => {
           {card.github && (
             <button
               onClick={() => window.open(card.github, '_blank')}
-              className={`btn ${card.githubClass || card.buttonClass}`}
+              className={`btn ${card.githubClass || card.buttonClass} ${
+                card.name === 'Tiago Ibarrola' ? 'tiago-button' : ''
+              }`}
             >
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
               GitHub
               {card.githubIcon &&
                 (card.githubIcon.includes('http') ? (
@@ -100,8 +115,14 @@ const MainCard = ({ cardData }) => {
           {card.linkedin && (
             <button
               onClick={() => window.open(card.linkedin, '_blank')}
-              className={`btn ${card.linkedinClass || card.buttonClass}`}
+              className={`btn ${card.linkedinClass || card.buttonClass} ${
+                card.name === 'Tiago Ibarrola' ? 'tiago-button' : ''
+              }`}
             >
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
               LinkedIn
               {card.linkedinIcon &&
                 (card.linkedinIcon.includes('http') ? (
@@ -126,8 +147,14 @@ const MainCard = ({ cardData }) => {
               onClick={() =>
                 window.open(`https://wa.me/${card.whatsapp}`, '_blank')
               }
-              className={`btn ${card.whatsappClass || card.buttonClass}`}
+              className={`btn ${card.whatsappClass || card.buttonClass} ${
+                card.name === 'Tiago Ibarrola' ? 'tiago-button' : ''
+              }`}
             >
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
               WhatsApp
               {card.whatsappIcon &&
                 (card.whatsappIcon.includes('http') ? (
@@ -150,8 +177,14 @@ const MainCard = ({ cardData }) => {
           {card.email && (
             <button
               onClick={() => window.open(`mailto:${card.email}`, '_blank')}
-              className={`btn ${card.emailClass || card.buttonClass}`}
+              className={`btn ${card.emailClass || card.buttonClass} ${
+                card.name === 'Tiago Ibarrola' ? 'tiago-button' : ''
+              }`}
             >
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
               Email
               {card.emailIcon &&
                 (card.emailIcon.includes('http') ? (
@@ -174,14 +207,55 @@ const MainCard = ({ cardData }) => {
       </div>
 
       {/* Mostrar el footer solo si existe */}
-      {card.footer && (
-        <div className={`card-footer ${card.footerColor || ''}`}>
-          {card.footerIcon && <i className={`${card.footerIcon} me-2`}></i>}
-          {card.footerText}
+      {card.name === 'Tiago Ibarrola' ? (
+        <div className='card-footer position-relative overflow-hidden'>
+          <div className='technologies-slider'>
+            <div className='slider-content'>
+              <img
+                src='https://img.icons8.com/color/48/javascript.png'
+                alt='JavaScript'
+                className='tech-icon'
+              />
+              <img
+                src='https://img.icons8.com/color/48/typescript.png'
+                alt='TypeScript'
+                className='tech-icon'
+              />
+              <img
+                src='https://img.icons8.com/color/48/c-sharp-logo.png'
+                alt='C#'
+                className='tech-icon'
+              />
+              <img
+                src='https://img.icons8.com/color/48/kotlin.png'
+                alt='Kotlin'
+                className='tech-icon'
+              />
+              <img
+                src='https://img.icons8.com/fluency/48/java-coffee-cup-logo.png'
+                alt='Java'
+                className='tech-icon'
+              />
+              <img
+                src='https://img.icons8.com/color/48/python.png'
+                alt='Python'
+                className='tech-icon'
+              />
+            </div>
+          </div>
         </div>
+      ) : (
+        card.footer && (
+          <div className={`card-footer ${card.footerColor || ''}`}>
+            {card.footerIcon && <i className={`${card.footerIcon} me-2`}></i>}
+            {card.footerText}
+          </div>
+        )
       )}
     </div>
   );
 };
 
 export default MainCard;
+
+// https://img.icons8.com/fluency/48/java-coffee-cup-logo.png
