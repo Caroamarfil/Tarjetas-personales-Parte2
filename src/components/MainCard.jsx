@@ -22,12 +22,13 @@ const MainCard = ({ cardData }) => {
 
   const isDario = card.name === 'Dario Skidelsky';
   const isTiago = card.name === 'Tiago Ibarrola';
+  const isCaro = card.name === 'Carolina Amarfil';
 
   return (
     <div
       className={`card text-center shadow-sm rounded-4 uniform-card ${
         card.cardClass
-      } ${isTiago ? 'tiago-background' : ''}`}
+      } ${isTiago ? 'tiago-background' : isCaro ? 'caro-background' : ''}`}
     >
       {card.header ? (
         <div className='bg-primary p-4 rounded-top-4'>
@@ -48,6 +49,7 @@ const MainCard = ({ cardData }) => {
           </div>
         </div>
       ) : (
+        
         <img
           src={card.imageUrl}
           className={`card-img-center ${card.imgClass}`}
@@ -80,8 +82,7 @@ const MainCard = ({ cardData }) => {
         )}
 
         <p
-          className={`card-text text-muted fst-italic px-4 mb-4 ${ isTiago ? 'tiago-description' : ''
-          }`}
+          className={`card-text text-muted fst-italic px-4 mb-4 ${isTiago ? 'tiago-description' : ''} ${card.descriptionClass || ''}`}
         >
           {card.description}
         </p>

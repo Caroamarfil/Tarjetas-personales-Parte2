@@ -1,0 +1,9 @@
+.maxi-photo {
+    transition: transform 0.3s ease, box-shadow 0.3s ease ; 
+  }
+  
+  .maxi-photo:hover {
+    transform: scale(1.1);
+    box-shadow: 0px 0px 20px 8px rgba(255, 175, 189, 1); 
+    filter: brightness(1.1);
+  }
