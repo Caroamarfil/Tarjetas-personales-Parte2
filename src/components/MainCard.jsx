@@ -1,10 +1,13 @@
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { CardContext } from '../context/CardContext';
+import { ChevronDown, ChevronUp } from 'lucide-react';
 
 const MainCard = ({ cardData }) => {
   const { cardsData } = useContext(CardContext);
   const { name: cardNameFromUrl } = useParams();
+  const [isExpanded, setIsExpanded] = useState(false);
+  
   const card =
     cardData ||
     cardsData.find((card) => card.name === decodeURIComponent(cardNameFromUrl));
@@ -13,15 +16,20 @@ const MainCard = ({ cardData }) => {
     return <div className='text-center mt-4 fs-4'>Tarjeta no encontrada</div>;
   }
 
+  const toggleExpand = () => {
+    setIsExpanded(!isExpanded);
+  };
+
+  const isDario = card.name === 'Dario Skidelsky';
+  const isTiago = card.name === 'Tiago Ibarrola';
+
   return (
     <div
       className={`card text-center shadow-sm rounded-4 uniform-card ${
         card.cardClass
-      } ${card.name === 'Tiago Ibarrola' ? 'tiago-background' : ''}`}
+      } ${isDario ? 'dario-background' : ''} ${isTiago ? 'tiago-background' : ''}`}
     >
-      {/* Condicional para verificar si tiene header */}
       {card.header ? (
-        // Si tiene header, la imagen va dentro del header
         <div className='bg-primary p-4 rounded-top-4'>
           <div className='position-relative'>
             <img
@@ -40,7 +48,6 @@ const MainCard = ({ cardData }) => {
           </div>
         </div>
       ) : (
-        // Si no tiene header, la imagen va fuera del header
         <img
           src={card.imageUrl || '/api/placeholder/150/150'}
           className={`card-img-center ${card.imgClass}`}
@@ -52,7 +59,7 @@ const MainCard = ({ cardData }) => {
       <div className='card-body'>
         <h5
           className={`card-title fw-bold mb-3 ${card.nameClass || ''} ${
-            card.name === 'Tiago Ibarrola' ? 'tiago-name' : ''
+            isDario ? 'dario-name' : isTiago ? 'tiago-name' : ''
           }`}
         >
           {card.name}
@@ -75,11 +82,113 @@ const MainCard = ({ cardData }) => {
 
         <p
           className={`card-text text-muted fst-italic px-4 mb-4 ${
-            card.name === 'Tiago Ibarrola' ? 'tiago-description' : ''
+            isDario ? 'dario-description' : isTiago ? 'tiago-description' : ''
           }`}
         >
           {card.description}
         </p>
+
+        {card.additionalInfo && (
+          <button
+            onClick={toggleExpand}
+            className="btn btn-link text-decoration-none mb-3 d-flex align-items-center justify-content-center gap-2"
+          >
+            {isExpanded ? (
+              <>
+                Mostrar menos <ChevronUp size={20} />
+              </>
+            ) : (
+              <>
+                Más información <ChevronDown size={20} />
+              </>
+            )}
+          </button>
+        )}
+
+        {isExpanded && card.additionalInfo && (
+          <div className="additional-info mb-4 px-4">
+            {card.additionalInfo.experience && (
+              <div className="mb-3">
+                <h6 className="fw-bold text-primary mb-2">Experiencia</h6>
+                <ul className="list-unstyled">
+                  {card.additionalInfo.experience.map((exp, index) => (
+                    <li key={index} className="mb-2">
+                      <div className="fw-semibold">{exp.role}</div>
+                      <div className="small text-muted">{exp.company}</div>
+                      <div className="small text-muted">{exp.period}</div>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+
+            {card.additionalInfo.education && (
+              <div className="mb-3">
+                <h6 className="fw-bold text-primary mb-2">Educación</h6>
+                <ul className="list-unstyled">
+                  {card.additionalInfo.education.map((edu, index) => (
+                    <li key={index} className="mb-2">
+                      <div className="fw-semibold">{edu.degree}</div>
+                      <div className="small text-muted">{edu.institution}</div>
+                      <div className="small text-muted">{edu.year}</div>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+
+            {card.additionalInfo.skills && (
+              <div className="mb-3">
+                <h6 className="fw-bold text-primary mb-2">Habilidades</h6>
+                <div className="d-flex flex-wrap justify-content-center gap-2">
+                  {card.additionalInfo.skills.map((skill, index) => (
+                    <span
+                      key={index}
+                      className="badge bg-secondary bg-opacity-10 text-secondary"
+                    >
+                      {skill}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {card.additionalInfo.hobbies && (
+              <div>
+                <h6 className="fw-bold text-primary mb-2">Hobbies</h6>
+                <p className="text-muted small">{card.additionalInfo.hobbies.join(', ')}</p>
+              </div>
+            )}
+
+            {card.additionalInfo.languages && (
+              <div className="mb-3">
+                <h6 className="fw-bold text-primary mb-2">Idiomas</h6>
+                <ul className="list-unstyled">
+                  {card.additionalInfo.languages.map((lang, index) => (
+                    <li key={index} className="small text-muted">
+                      {lang.language}: {lang.level}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+
+            {card.additionalInfo.certifications && (
+              <div className="mb-3">
+                <h6 className="fw-bold text-primary mb-2">Certificaciones</h6>
+                <ul className="list-unstyled">
+                  {card.additionalInfo.certifications.map((cert, index) => (
+                    <li key={index} className="mb-2">
+                      <div className="fw-semibold">{cert.name}</div>
+                      <div className="small text-muted">{cert.issuer}</div>
+                      <div className="small text-muted">{cert.year}</div>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+          </div>
+        )}
 
         <div className='d-flex justify-content-center gap-3 flex-wrap'>
           {card.github && (
@@ -206,7 +315,6 @@ const MainCard = ({ cardData }) => {
         </div>
       </div>
 
-      {/* Mostrar el footer solo si existe */}
       {card.name === 'Tiago Ibarrola' ? (
         <div className='card-footer position-relative overflow-hidden'>
           <div className='technologies-slider'>
@@ -257,5 +365,3 @@ const MainCard = ({ cardData }) => {
 };
 
 export default MainCard;
-
-// https://img.icons8.com/fluency/48/java-coffee-cup-logo.png
