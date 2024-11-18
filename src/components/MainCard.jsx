@@ -27,13 +27,13 @@ const MainCard = ({ cardData }) => {
     <div
       className={`card text-center shadow-sm rounded-4 uniform-card ${
         card.cardClass
-      } ${isDario ? 'dario-background' : ''} ${isTiago ? 'tiago-background' : ''}`}
+      } ${isTiago ? 'tiago-background' : ''}`}
     >
       {card.header ? (
         <div className='bg-primary p-4 rounded-top-4'>
           <div className='position-relative'>
             <img
-              src={card.imageUrl || '/api/placeholder/150/150'}
+              src={card.imageUrl}
               className={`rounded-circle border border-4 border-white shadow mx-auto`}
               alt='Foto de perfil'
               style={
@@ -49,7 +49,7 @@ const MainCard = ({ cardData }) => {
         </div>
       ) : (
         <img
-          src={card.imageUrl || '/api/placeholder/150/150'}
+          src={card.imageUrl}
           className={`card-img-center ${card.imgClass}`}
           alt='Foto de perfil'
           style={card.imgStyle || {}}
@@ -58,8 +58,7 @@ const MainCard = ({ cardData }) => {
 
       <div className='card-body'>
         <h5
-          className={`card-title fw-bold mb-3 ${card.nameClass || ''} ${
-            isDario ? 'dario-name' : isTiago ? 'tiago-name' : ''
+          className={`card-title fw-bold mb-3 ${card.nameClass || ''} ${isTiago ? 'tiago-name' : ''
           }`}
         >
           {card.name}
@@ -81,8 +80,7 @@ const MainCard = ({ cardData }) => {
         )}
 
         <p
-          className={`card-text text-muted fst-italic px-4 mb-4 ${
-            isDario ? 'dario-description' : isTiago ? 'tiago-description' : ''
+          className={`card-text text-muted fst-italic px-4 mb-4 ${ isTiago ? 'tiago-description' : ''
           }`}
         >
           {card.description}
@@ -195,7 +193,7 @@ const MainCard = ({ cardData }) => {
             <button
               onClick={() => window.open(card.github, '_blank')}
               className={`btn ${card.githubClass || card.buttonClass} ${
-                card.name === 'Tiago Ibarrola' ? 'tiago-button' : ''
+                isTiago ? 'tiago-button' : isDario? 'dario-btn' : ''
               }`}
             >
               <span></span>
@@ -225,7 +223,7 @@ const MainCard = ({ cardData }) => {
             <button
               onClick={() => window.open(card.linkedin, '_blank')}
               className={`btn ${card.linkedinClass || card.buttonClass} ${
-                card.name === 'Tiago Ibarrola' ? 'tiago-button' : ''
+               isTiago ? 'tiago-button' : isDario? 'dario-btn' : ''
               }`}
             >
               <span></span>
@@ -257,7 +255,7 @@ const MainCard = ({ cardData }) => {
                 window.open(`https://wa.me/${card.whatsapp}`, '_blank')
               }
               className={`btn ${card.whatsappClass || card.buttonClass} ${
-                card.name === 'Tiago Ibarrola' ? 'tiago-button' : ''
+                isTiago ? 'tiago-button' : isDario? 'dario-btn' : ''
               }`}
             >
               <span></span>
@@ -287,7 +285,7 @@ const MainCard = ({ cardData }) => {
             <button
               onClick={() => window.open(`mailto:${card.email}`, '_blank')}
               className={`btn ${card.emailClass || card.buttonClass} ${
-                card.name === 'Tiago Ibarrola' ? 'tiago-button' : ''
+                isTiago ? 'tiago-button' : ''
               }`}
             >
               <span></span>
@@ -315,7 +313,7 @@ const MainCard = ({ cardData }) => {
         </div>
       </div>
 
-      {card.name === 'Tiago Ibarrola' ? (
+      {isTiago ? (
         <div className='card-footer position-relative overflow-hidden'>
           <div className='technologies-slider'>
             <div className='slider-content'>
