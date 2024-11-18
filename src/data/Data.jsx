@@ -3,17 +3,14 @@ import perfilCaro from '../images/perfilCaro.jpg';
 import perfilDario from '../images/DarioPic.jpg';
 import perfilMaxi from '../images/perfilMaxi.jpg';
 import perfilMaria from '../images/maria.png';
-// import '../CaroCard/CaroCard.css';
-// import '../MariaCard/MariaCard.css';
-// import '../MaxiCard/MaxiCard.css';
+
 
 export const cardsData = [
   //Datos y estilos de Tiago
   {
     id: 1,
     name: 'Tiago Ibarrola',
-    description:
-      'Me encanta el mundo de la tecnología y siempre estoy buscando nuevos desafíos.',
+    description: 'Me encanta el mundo de la tecnología y siempre estoy buscando nuevos desafíos.',
     imageUrl: perfilTiago,
     github: 'https://github.com/tiago-appdev',
     linkedin: 'https://www.linkedin.com/in/tiagoibarrola/',
@@ -23,12 +20,43 @@ export const cardsData = [
     githubClass: 'btn btn-primary rounded',
     linkedinClass: 'btn btn-primary rounded',
     whatsappClass: 'btn btn-primary rounded',
-    githubIcon:
-      'https://img.icons8.com/?size=100&id=AZOZNnY73haj&format=png&color=000000',
-    linkedinIcon:
-      'https://img.icons8.com/?size=100&id=13930&format=png&color=000000',
-    whatsappIcon:
-      'https://img.icons8.com/?size=100&id=30448&format=png&color=000000',
+    githubIcon: 'https://img.icons8.com/?size=100&id=AZOZNnY73haj&format=png&color=000000',
+    linkedinIcon: 'https://img.icons8.com/?size=100&id=13930&format=png&color=000000',
+    whatsappIcon: 'https://img.icons8.com/?size=100&id=30448&format=png&color=000000',
+additionalInfo: {
+      experience: [
+        {
+          role: 'Prácticas académicas',
+          company: 'IFTS N° 29',
+          period: '2023 - Presente',
+        },
+      ],
+      education: [
+        {
+          degree: 'Técnico en Reparación y Mantenimiento de PC',
+          institution: 'Instituto Mariano Moreno',
+          year: '2009-2011',
+        },
+        {
+          degree: 'Tecnicatura Superior en Desarrollo de Software',
+          institution: 'IFTS N°29',
+          year: '2023 - Actualidad',
+        },
+      ],
+      hobbies: ['Leer', 'Programar', 'Ver series', 'Actividades al aire libre'],
+      languages: [
+        { language: 'Spanish', level: 'Nativo' },
+        { language: 'English', level: 'B1-Intermedio' },
+        { language: 'Guarani', level: 'Profesional' },
+      ],
+      certifications: [
+        {
+          name: 'AWS Certified Cloud Practitioner',
+          issuer: 'AWS',
+          year: '2024',
+        },
+      ],
+    }
   },
   //Datos y estilos de Dario
   {
@@ -67,6 +95,25 @@ export const cardsData = [
     githubIcon: 'bi bi-github',
     linkedinIcon: 'bi bi-linkedin',
     emailIcon: 'bi bi-envelope',
+    additionalInfo: {
+        experience: [
+          { role: 'Java Developer', company: 'Globant', period: '2024 - Present' },
+          { role: 'Analista Programador', company: 'RI', period: '2023 - 2024' }
+        ],
+        education: [
+          { degree: 'Ingeneria en Sistemas', institution: 'UTN', year: '2019-En Curso' }
+        ],
+        skills: ['JavaScript', 'React', 'Node.js', 'Python', 'Java'],
+        hobbies: ['Programar', 'Gaming', 'Anime', 'Futbol'],
+        languages: [
+          { language: 'Spanish', level: 'Nativo' },
+          { language: 'English', level: 'C2 - Avanzado' },
+          { language: 'Portugués', level: 'B1 - Intermedio' }
+        ],
+        certifications: [
+          { name: 'Certified Tech Developer', issuer: 'Egg', year: '2023' }
+        ]
+      }
   },
   //Datos y estilos de Caro
   {
@@ -106,12 +153,12 @@ export const cardsData = [
     whatsapp:
       'https://wa.me/543454347792?text=Estoy%20interesado/a%20en%20trabajar%20contigo',
     cardClass: 'bg-light text-dark border border-dark-subtle bg-gradient',
-    imgClass: 'card-img-center p-5 w-50 h-50',
+    imgClass: 'rounded-circle mx-auto d-block p-3 w-50 h-auto',
     imgStyle: {
-      marginLeft: 'auto',
-      marginRight: 'auto',
-      borderRadius: '50%',
+      width: '130px',
+      height: '130px',
       objectFit: 'cover',
+      marginBottom: '0',
     },
     githubClass: 'btn btn-secondary rounded inter-regular',
     linkedinClass: 'btn btn-primary rounded inter-regular',
@@ -122,6 +169,25 @@ export const cardsData = [
       'https://img.icons8.com/?size=100&id=13930&format=png&color=000000',
     whatsappIcon:
       'https://img.icons8.com/?size=100&id=30448&format=png&color=000000',
+      additionalInfo: {
+        experience: [
+          { role: 'Java Developer', company: 'Globant', period: '2024 - Present' },
+          { role: 'Analista Programador', company: 'RI', period: '2023 - 2024' }
+        ],
+        education: [
+          { degree: 'Ingeneria en Sistemas', institution: 'UTN', year: '2019-En Curso' }
+        ],
+        skills: ['JavaScript', 'React', 'Node.js', 'Python', 'Java', 'Python'],
+        hobbies: ['Coding', 'Gaming', 'Reading'],
+        languages: [
+          { language: 'Spanish', level: 'Nativo' },
+          { language: 'English', level: 'Profesional' },
+          { language: 'Portugués', level: 'Conversacional' }
+        ],
+        certifications: [
+          { name: 'Certified Tech Developer', issuer: 'Egg', year: '2023' }
+        ]
+      }
   },
   // Datos y estilos de Maxi
   {
