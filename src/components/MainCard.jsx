@@ -28,7 +28,7 @@ const MainCard = ({ cardData }) => {
     <div
       className={`card text-center shadow-sm rounded-4 uniform-card ${
         card.cardClass
-      } ${isTiago ? 'tiago-background' : ''} ${card.headerClass } ${isMaria? 'bg-image-maria' : ''}`}
+      } ${isTiago ? 'tiago-background' : ''} ${isMaria? 'bg-image-maria' : ''}`}
     >
       {card.header ? (
         <div className= 'bg-primary p-4 rounded-top-4 '>
