@@ -23,15 +23,15 @@ const MainCard = ({ cardData }) => {
   const isDario = card.name === 'Dario Skidelsky';
   const isTiago = card.name === 'Tiago Ibarrola';
   const isCaro = card.name === 'Carolina Amarfil';
-
+  const isMaria = card.name === 'Maria Ozuna'; 
   return (
     <div
       className={`card text-center shadow-sm rounded-4 uniform-card ${
         card.cardClass
-      } ${isTiago ? 'tiago-background' : isCaro ? 'caro-background' : ''}`}
+      } ${isTiago ? 'tiago-background' : ''} ${card.headerClass } ${isMaria? 'bg-image-maria' : isCaro ? 'caro-background' : ''}`}
     >
       {card.header ? (
-        <div className='bg-primary p-4 rounded-top-4'>
+        <div className= 'bg-primary p-4 rounded-top-4 '>
           <div className='position-relative'>
             <img
               src={card.imageUrl}
@@ -194,7 +194,7 @@ const MainCard = ({ cardData }) => {
             <button
               onClick={() => window.open(card.github, '_blank')}
               className={`btn ${card.githubClass || card.buttonClass} ${
-                isTiago ? 'tiago-button' : isDario? 'dario-btn' : ''
+                isTiago ? 'tiago-button' : isDario? 'dario-btn' : isMaria? 'button-maria' : ''
               }`}
             >
               <span></span>
@@ -224,7 +224,7 @@ const MainCard = ({ cardData }) => {
             <button
               onClick={() => window.open(card.linkedin, '_blank')}
               className={`btn ${card.linkedinClass || card.buttonClass} ${
-               isTiago ? 'tiago-button' : isDario? 'dario-btn' : ''
+               isTiago ? 'tiago-button' : isDario? 'dario-btn' : isMaria? 'button-maria' : ''
               }`}
             >
               <span></span>
@@ -256,8 +256,8 @@ const MainCard = ({ cardData }) => {
                 window.open(`https://wa.me/${card.whatsapp}`, '_blank')
               }
               className={`btn ${card.whatsappClass || card.buttonClass} ${
-                isTiago ? 'tiago-button' : isDario? 'dario-btn' : ''
-              }`}
+                isTiago ? 'tiago-button' : isDario? 'dario-btn' : isMaria? 'button-maria' : ''
+              } `}
             >
               <span></span>
               <span></span>
@@ -286,7 +286,7 @@ const MainCard = ({ cardData }) => {
             <button
               onClick={() => window.open(`mailto:${card.email}`, '_blank')}
               className={`btn ${card.emailClass || card.buttonClass} ${
-                isTiago ? 'tiago-button' : ''
+                isTiago ? 'tiago-button' : isDario? 'dario-btn' : ''
               }`}
             >
               <span></span>

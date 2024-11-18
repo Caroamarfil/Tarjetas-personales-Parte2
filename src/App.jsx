@@ -4,6 +4,7 @@ import './styles/Tiago.css';
 import './styles/Dario.css';
 import './styles/Caro.css';
 import './styles/Maxi.css';
+import './styles/Maria.css';
 import Head from './components/Head';
 import MenuCard from './components/MenuCard';
 import CardDetail from './components/CardDetail';
