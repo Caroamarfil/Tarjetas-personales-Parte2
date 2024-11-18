@@ -127,7 +127,7 @@ additionalInfo: {
     github: 'https://github.com/Caroamarfil',
     linkedin: 'https://www.linkedin.com/in/carolina-amarfil-3a8125261/',
     whatsapp: '543518017680',
-    cardClass: 'bg-light text-dark border border-dark-subtle pink-card',
+    cardClass: 'bg-light text-dark border border-dark-subtle pink-card caro-background',
     whatsappClass: 'caro-btn ',
     imgClass: 'rounded-circle mx-auto mb-4 border border-3 border-white shadow caro-photo',
     imgStyle: {
@@ -172,7 +172,7 @@ additionalInfo: {
     linkedin: 'https://www.linkedin.com/in/maria-ozuna/',
     whatsapp:
       'https://wa.me/543454347792?text=Estoy%20interesado/a%20en%20trabajar%20contigo',
-    cardClass: 'bg-light text-dark border border-dark-subtle bg-gradient',
+    cardClass: 'bg-light text-dark border border-dark-subtle bg-gradient bg-image-maria',
     imgClass: 'rounded-circle mx-auto d-block p-3 w-50 h-auto',
     imgStyle: {
       width: '130px',
