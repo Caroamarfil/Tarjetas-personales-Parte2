@@ -23,6 +23,40 @@ export const cardsData = [
     githubIcon: 'https://img.icons8.com/?size=100&id=AZOZNnY73haj&format=png&color=000000',
     linkedinIcon: 'https://img.icons8.com/?size=100&id=13930&format=png&color=000000',
     whatsappIcon: 'https://img.icons8.com/?size=100&id=30448&format=png&color=000000',
+additionalInfo: {
+      experience: [
+        {
+          role: 'Prácticas académicas',
+          company: 'IFTS N° 29',
+          period: '2023 - Presente',
+        },
+      ],
+      education: [
+        {
+          degree: 'Técnico en Reparación y Mantenimiento de PC',
+          institution: 'Instituto Mariano Moreno',
+          year: '2009-2011',
+        },
+        {
+          degree: 'Tecnicatura Superior en Desarrollo de Software',
+          institution: 'IFTS N°29',
+          year: '2023 - Actualidad',
+        },
+      ],
+      hobbies: ['Leer', 'Programar', 'Ver series', 'Actividades al aire libre'],
+      languages: [
+        { language: 'Spanish', level: 'Nativo' },
+        { language: 'English', level: 'B1-Intermedio' },
+        { language: 'Guarani', level: 'Profesional' },
+      ],
+      certifications: [
+        {
+          name: 'AWS Certified Cloud Practitioner',
+          issuer: 'AWS',
+          year: '2024',
+        },
+      ],
+    }
   },
   //Datos y estilos de Dario
   {
@@ -69,12 +103,12 @@ export const cardsData = [
         education: [
           { degree: 'Ingeneria en Sistemas', institution: 'UTN', year: '2019-En Curso' }
         ],
-        skills: ['JavaScript', 'React', 'Node.js', 'Python', 'Java', 'Python'],
+        skills: ['JavaScript', 'React', 'Node.js', 'Python', 'Java'],
         hobbies: ['Programar', 'Gaming', 'Anime', 'Futbol'],
         languages: [
           { language: 'Spanish', level: 'Nativo' },
-          { language: 'English', level: 'Profesional' },
-          { language: 'Portugués', level: 'Conversacional' }
+          { language: 'English', level: 'C2 - Avanzado' },
+          { language: 'Portugués', level: 'B1 - Intermedio' }
         ],
         certifications: [
           { name: 'Certified Tech Developer', issuer: 'Egg', year: '2023' }
