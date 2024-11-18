@@ -139,6 +139,24 @@ additionalInfo: {
     githubIcon: 'bi bi-github',
     linkedinIcon: 'bi bi-linkedin',
     whatsappIcon: 'bi bi-whatsapp',
+    additionalInfo: {
+      experience: [
+        { role: 'Prácticas académicas', company: 'IFTS N° 29', period: '2023 - Present' }
+      ],
+      education: [
+        { degree: 'Tecnicutura Superior en Desarrollo de Software', institution: 'IFTS N°29', year: '2023-En Curso' }
+      ],
+      hobbies: ['Leer', 'Cinéfila','Cocina étnica'],
+      languages: [
+        { language: 'Spanish', level: 'Nativo' },
+        { language: 'English', level: 'C2 - Avanzado' }
+      ],
+      certifications: [
+        { name: 'Full Stack Developer- Python', issuer: 'Codo a codo 4.0', year: '2023' },
+        { name: 'Programación desde cero', issuer: 'Egg', year: '2022' }
+        
+      ]
+    }
   },
   // Datos y estilos de Mary
   {
@@ -170,22 +188,18 @@ additionalInfo: {
     whatsappIcon:
       'https://img.icons8.com/?size=100&id=30448&format=png&color=000000',
       additionalInfo: {
-        experience: [
-          { role: 'Java Developer', company: 'Globant', period: '2024 - Present' },
-          { role: 'Analista Programador', company: 'RI', period: '2023 - 2024' }
-        ],
         education: [
-          { degree: 'Ingeneria en Sistemas', institution: 'UTN', year: '2019-En Curso' }
+	  { degree: 'Tecnico en Desarrollo de Software', institution: 'IFTS29', year: '2023-En Curso' },
+	  { degree: 'Tecnico en Desarrollo Web', institution: 'UNER', year: '2024-En Curso' }
         ],
-        skills: ['JavaScript', 'React', 'Node.js', 'Python', 'Java', 'Python'],
-        hobbies: ['Coding', 'Gaming', 'Reading'],
+        skills: ['Java', 'Desarrollo Web', 'MySQL', 'OCI', 'Python'],
+        hobbies: ['Musica', 'Novelas', 'kdramas'],
         languages: [
           { language: 'Spanish', level: 'Nativo' },
-          { language: 'English', level: 'Profesional' },
-          { language: 'Portugués', level: 'Conversacional' }
+          { language: 'English', level: 'Advanced' },
         ],
         certifications: [
-          { name: 'Certified Tech Developer', issuer: 'Egg', year: '2023' }
+          { name: 'Certified Back-end', issuer: 'Oracle Next Education', year: '2023' }
         ]
       }
   },
@@ -217,5 +231,11 @@ additionalInfo: {
       'https://img.icons8.com/?size=100&id=13930&format=png&color=000000',
     whatsappIcon:
       'https://img.icons8.com/?size=100&id=30448&format=png&color=000000',
+      additionalInfo: {
+        education: [
+	  { degree: 'Tecnico en Desarrollo de Software', institution: 'IFTS29', year: '2023-En Curso' },
+        ],
+        hobbies: ['Leer', 'Andar en bici'],
+      }
   },
 ];
